@@ -1,3 +1,6 @@
+*.complier.xml
+*.misc.xml
+*.vcs.xml
 *.iml
 target
 idea
