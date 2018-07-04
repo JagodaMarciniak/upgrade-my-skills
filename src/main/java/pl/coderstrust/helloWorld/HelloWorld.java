@@ -1,4 +1,4 @@
-package pl.coderstrust.hello;
+package pl.coderstrust.helloWorld;
 
 public class HelloWorld {
     public static void main(String[] args) {
