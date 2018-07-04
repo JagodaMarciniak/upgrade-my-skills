@@ -26,4 +26,4 @@ public class BubbleSort {
         // tu wypisz tablice
     }
 }
-}
+
