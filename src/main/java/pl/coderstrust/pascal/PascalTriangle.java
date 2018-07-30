@@ -15,7 +15,7 @@ public class PascalTriangle {
             int number = 1;
             printSpacesForRow(i, height);
             for (int j = 0; j <= i; j++) {
-                System.out.printf("%5d", number);
+                System.out.printf("%4d", number);
                 number = number * (i - j) / (j + 1);
             }
             System.out.println();
