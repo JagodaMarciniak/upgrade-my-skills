@@ -1,4 +1,4 @@
-package pl.coderstrust.hello.FooBar;
+package pl.coderstrust.FooBar;
 
 public class FooBar {
     public static void main(String[] args) {
