@@ -2,10 +2,10 @@ package pl.coderstrust.christmastree;
 
 public class ChristmasTree {
     public static void main(String[] args) {
-        printTree(6);
+        printChristmasTree(6);
     }
 
-    public static void printTree(int height) {
+    public static void printChristmasTree(int height) {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < height - i; j++) {
                 System.out.print(" ");
