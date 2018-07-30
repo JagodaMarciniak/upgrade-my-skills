@@ -1,4 +1,4 @@
-package pl.coderstrust.hello.bubbleSort;
+package pl.coderstrust.bubbleSort;
 
 public class SelectionSort {
     public static void main(String[] args) {
