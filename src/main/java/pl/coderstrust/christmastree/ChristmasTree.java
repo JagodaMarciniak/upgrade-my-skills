@@ -1,4 +1,4 @@
-package pl.coderstrust.hello.christmastree;
+package pl.coderstrust.christmastree;
 
 public class ChristmasTree {
     public static void main(String[] args) {
