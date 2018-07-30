@@ -18,8 +18,6 @@ public class ChristmasTree {
         for (int i = 0; i < height - 1; i++) {
             System.out.print(" ");
         }
-        for (int i = height - 2; i < height; i++) {
-            System.out.print("*");
-        }
+        System.out.print("**");
     }
 }
