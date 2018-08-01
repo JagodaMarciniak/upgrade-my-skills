@@ -6,12 +6,12 @@ public class SelectionSort {
         System.out.println("Unsorted array : ");
         printArray(arrayToSort);
         System.out.println();
-        sortArray(arrayToSort);
+        selectionSort(arrayToSort);
         System.out.println("Sorted array :");
         printArray(arrayToSort);
     }
 
-    public static int[] sortArray(int[] array) {
+    public static int[] selectionSort(int[] array) {
         for (int i = 0; i < array.length - 1; i++) {
             int counter = i;
             for (int j = i + 1; j < array.length; j++) {
@@ -27,7 +27,7 @@ public class SelectionSort {
         return array;
     }
 
-    public static void printArray(int[] array) {
+    private static void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + "  ");
         }
