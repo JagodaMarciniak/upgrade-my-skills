@@ -12,7 +12,7 @@ public class MultiplicationTable {
                 System.out.printf("   %d", j);
             }
             if (j >= 10) {
-                System.out.printf("  %d\n", j);
+                System.out.printf("  %d", j);
             }
         }
         System.out.println();
@@ -20,17 +20,18 @@ public class MultiplicationTable {
             if (i > 9) {
                 System.out.print(i);
             } else {
-                System.out.printf(" %d\n", i);
+                System.out.printf(" %d", i);
             }
             for (int j = 1; j <= size; j++) {
-                if (i * j < 10) {
-                    System.out.print("   " + i * j);
+                int multi = i * j;
+                if (multi < 10) {
+                    System.out.printf("   %d", multi);
                 }
-                if (i * j >= 10 && i * j < 100) {
-                    System.out.print("  " + i * j);
+                if (multi >= 10 && multi < 100) {
+                    System.out.printf("  %d", multi);
                 }
-                if (i * j >= 100) {
-                    System.out.print(" " + i * j);
+                if (multi >= 100) {
+                    System.out.printf(" %d", multi);
                 }
             }
             System.out.println();
