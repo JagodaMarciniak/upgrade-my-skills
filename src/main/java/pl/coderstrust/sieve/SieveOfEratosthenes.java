@@ -6,9 +6,9 @@ public class SieveOfEratosthenes {
         printArray(array);
     }
 
-    public static int [] createTable(int maximumNumber){
-        int table [] = new int[i];
-        for(int i=2;  i< maximumNumber; i++){
+    public static int[] createTable(int maximumNumber) {
+        int table[] = new int[i];
+        for (int i = 2; i < maximumNumber; i++) {
 
         }
         return table;
