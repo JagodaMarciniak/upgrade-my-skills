@@ -9,7 +9,7 @@ public class MultiplicationTable {
         System.out.print("  ");
         for (int j = 1; j <= size; j++) {
             if (j < 10) {
-                System.out.printf("   %d", j);
+                System.out.printf("%4d", j);
             }
             if (j >= 10) {
                 System.out.printf("  %d", j);
