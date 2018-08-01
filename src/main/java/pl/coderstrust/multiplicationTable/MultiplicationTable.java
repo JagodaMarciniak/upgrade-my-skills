@@ -2,10 +2,10 @@ package pl.coderstrust.multiplicationTable;
 
 public class MultiplicationTable {
     public static void main(String[] args) {
-        printTable(12);
+        printMultiplicationTable(12);
     }
 
-    public static void printTable(int size) {
+    public static void printMultiplicationTable(int size) {
         System.out.print("  ");
         for (int j = 1; j <= size; j++) {
             if (j < 10) {
