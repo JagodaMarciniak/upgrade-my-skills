@@ -4,6 +4,7 @@ public class SieveOfEratosthenes {
     public static void main(String[] args) {
 //        printArray(createTable(20));
         printArray(removeMultipliersOfTwo(createTable(20)));
+
     }
 
     public static int[] createTable(int maximumNumber) {
@@ -15,12 +16,12 @@ public class SieveOfEratosthenes {
     }
 
     public static int[] removeMultipliersOfTwo(int[] table) {
-        for (int i = 1; i < table.length - 1; i++) {
-            if (table[i] % 2 == 0) {
-                int shift = table[i + 1];
-                table[i] = shift;
+
+        for (int i = 0; i < table.length - 1; i++){
+
+
+
             }
-        }
         return table;
     }
 
