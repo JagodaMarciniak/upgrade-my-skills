@@ -2,7 +2,7 @@ package pl.coderstrust.sort;
 
 public class BubbleSort {
     public static void main(String[] args) {
-        int[] arrayToSort = {3, 4, 2, 1, 10};
+        int[] arrayToSort = {3, 4, 2, 1, 10, 55, 0};
         System.out.println("Unsorted array:");
         printArray(arrayToSort);
         bubbleSort(arrayToSort);
@@ -12,20 +12,24 @@ public class BubbleSort {
     }
 
     public static int[] bubbleSort(int[] array) {
-        boolean change = true;
-        while (change) {
-            change = false;
+
+        for (boolean sorted; !sorted; ) {
             for (int i = 1; i < array.length; i++) {
-                int counter = 0;
+                int indexOfMinNumber = 0;
                 if (array[i - 1] > array[i]) {
-                    counter = array[i - 1];
-                    array[i - 1] = array[i];
-                    array[i] = counter;
-                    change = true;
+                    swap(array, i, i - 1);
+                    sorted = true;
                 }
+
             }
         }
         return array;
+    }
+
+    private static void swap(int[] array, int indexA, int indexB) {
+        int smallerNumber = array[indexA];
+        array[indexA] = array[indexB];
+        array[indexB] = smallerNumber;
     }
 
     public static void printArray(int[] array) {
