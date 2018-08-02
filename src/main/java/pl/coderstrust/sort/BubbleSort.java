@@ -12,15 +12,14 @@ public class BubbleSort {
     }
 
     public static int[] bubbleSort(int[] array) {
-
-        for (boolean sorted; !sorted; ) {
+        for (boolean sorted = false; !sorted; ) {
+            sorted = true;
             for (int i = 1; i < array.length; i++) {
                 int indexOfMinNumber = 0;
                 if (array[i - 1] > array[i]) {
                     swap(array, i, i - 1);
-                    sorted = true;
+                    sorted = false;
                 }
-
             }
         }
         return array;
@@ -32,9 +31,9 @@ public class BubbleSort {
         array[indexB] = smallerNumber;
     }
 
-    public static void printArray(int[] array) {
+    private static void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + "  ");
+            System.out.printf("  %d", array[i]);
         }
     }
 }
