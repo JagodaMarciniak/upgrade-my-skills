@@ -1,4 +1,4 @@
-package pl.coderstrust.multiplicationTable;
+package pl.coderstrust.multiplication;
 
 public class MultiplicationTable {
     public static void main(String[] args) {
