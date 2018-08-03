@@ -1,9 +1,12 @@
 package pl.coderstrust.sieve;
 
+import java.util.Arrays;
+
 public class SieveOfEratosthenes {
     public static void main(String[] args) {
-//        printArray(createTable(20));
-        printArray(removeMultipliersOfTwo(createTable(20)));
+        int[] table = createTable(20);
+        System.out.println(Arrays.toString(table));
+        System.out.println(Arrays.toString(removeMultipliersOfTwo(table)));
 
     }
 
@@ -16,16 +19,25 @@ public class SieveOfEratosthenes {
     }
 
     public static int[] removeMultipliersOfTwo(int[] table) {
-        int right = 0;
-        int previous = 0;
-        for (int i = 0; i < table.length - 1; i++) {
-            if (table[i] % 2 == 0) {
+        int[] tableToClean = Arrays.copyOf(table, table.length);
+        int[] tableCleaned = {};
+
+
+        for (int j = 0; j < tableToClean.length; j++)
+
+            while (tableToClean[j] % 2 != 0) {
+                tableCleaned[j] = tableToClean[j];
+
 
             }
 
 
-        }
-        return table;
+        return tableCleaned;
+    }
+
+    private static void shift(int[] array, int indexA, int indexB) {
+        int removed = array[indexA];
+        array[indexA] = array[indexB];
     }
 
     public static void printArray(int[] table) {
