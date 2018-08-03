@@ -16,8 +16,12 @@ public class SieveOfEratosthenes {
     }
 
     public static int[] removeMultipliersOfTwo(int[] table) {
-
+        int right = 0;
+        int previous = 0
         for (int i = 0; i < table.length - 1; i++) {
+            if (table[i]%2==0){
+
+            }
 
 
         }
