@@ -1,14 +1,17 @@
 package pl.coderstrust.sort;
 
+import java.util.Arrays;
+
 public class SelectionSort {
     public static void main(String[] args) {
-        int[] arrayToSort = {3, 20, 7, 40, 15, 27, 0};
+        int[] array = {3, 20, 7, 40, 15, 27, 0};
+        int[] arrayToSort = Arrays.copyOf(array, array.length);
         System.out.println("Unsorted array : ");
-        printArray(arrayToSort);
+        System.out.println(Arrays.toString(arrayToSort));
         System.out.println();
         selectionSort(arrayToSort);
         System.out.println("Sorted array :");
-        printArray(arrayToSort);
+        System.out.println(Arrays.toString(arrayToSort));
     }
 
     public static int[] selectionSort(int[] array) {
@@ -28,11 +31,5 @@ public class SelectionSort {
         int smallerNumber = array[indexA];
         array[indexA] = array[indexB];
         array[indexB] = smallerNumber;
-    }
-
-    private static void printArray(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.printf("  %s", array[i]);
-        }
     }
 }
