@@ -22,7 +22,7 @@ public class BubbleSort {
                 }
             }
         }
-        return array;
+        return arrayToSort;
     }
 
     private static void swap(int[] array, int indexA, int indexB) {
