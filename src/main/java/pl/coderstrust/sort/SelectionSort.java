@@ -5,26 +5,24 @@ import java.util.Arrays;
 public class SelectionSort {
     public static void main(String[] args) {
         int[] array = {3, 20, 7, 40, 15, 27, 0};
-        int[] arrayToSort = Arrays.copyOf(array, array.length);
         System.out.println("Unsorted array : ");
-        System.out.println(Arrays.toString(arrayToSort));
-        System.out.println();
-        selectionSort(arrayToSort);
+        System.out.println(Arrays.toString(array));
         System.out.println("Sorted array :");
-        System.out.println(Arrays.toString(arrayToSort));
+        System.out.println(Arrays.toString(selectionSort(array)));
     }
 
     public static int[] selectionSort(int[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
+        int[] arrayToSort = Arrays.copyOf(array, array.length);
+        for (int i = 0; i < arrayToSort.length - 1; i++) {
             int indexOfMinNumber = i;
-            for (int j = i + 1; j < array.length; j++) {
-                if (array[j] < array[indexOfMinNumber]) {
+            for (int j = i + 1; j < arrayToSort.length; j++) {
+                if (arrayToSort[j] < arrayToSort[indexOfMinNumber]) {
                     indexOfMinNumber = j;
                 }
             }
-            swap(array, i, indexOfMinNumber);
+            swap(arrayToSort, i, indexOfMinNumber);
         }
-        return array;
+        return arrayToSort;
     }
 
     private static void swap(int[] array, int indexA, int indexB) {
