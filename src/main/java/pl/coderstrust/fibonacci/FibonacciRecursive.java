@@ -2,11 +2,11 @@ package pl.coderstrust.fibonacci;
 
 public class FibonacciRecursive {
     public static void main(String[] args) {
-        System.out.println(fibonacci(8));
+        System.out.println(fibonacci(-9));
     }
 
     private static long fibonacci(int fibonacciNumberInOrder) {
-        if (fibonacciNumberInOrder == 0) {
+        if (fibonacciNumberInOrder <= 0) {
             return 0;
         } else if (fibonacciNumberInOrder == 1) {
             return 1;

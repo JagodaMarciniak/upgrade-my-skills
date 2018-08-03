@@ -6,16 +6,16 @@ public class FibonacciIterative {
     }
 
     private static long fibonacci(int fibonacciNumberInOrder) {
-        if (fibonacciNumberInOrder <= 1) {
-            return fibonacciNumberInOrder;
+        if (fibonacciNumberInOrder == 1) {
+            return 1;
         }
-        int fib = 1;
-        int prevFib = 1;
-        for (int i = 2; i < fibonacciNumberInOrder; i++) {
-            int temp = fib;
-            fib += prevFib;
-            prevFib = temp;
+        int rightFibNumber = 0;
+        int previousFibNumber = 1;
+        for (int i = 0; i < fibonacciNumberInOrder; i++) {
+            int temp = rightFibNumber;
+            rightFibNumber += previousFibNumber;
+            previousFibNumber = temp;
         }
-        return fib;
+        return rightFibNumber;
     }
 }
