@@ -11,22 +11,28 @@ public class SieveOfEratosthenes {
     }
 
     public static int[] createTable(int maximumNumber) {
-        int[] table = new int[maximumNumber - 1];
-        for (int i = 0; i < maximumNumber - 1; i++) {
-            table[i] = i + 2;
+        int[] table = new int[maximumNumber];
+        for (int i = 0; i < maximumNumber; i++) {
+            table[i] = i;
         }
         return table;
     }
 
     public static int[] removeMultipliersOfTwo(int[] table) {
         int[] tableToClean = Arrays.copyOf(table, table.length);
-        for (int i = 0; i * i < tableToClean.length; i++) {
+        for (int i = 2; i * i < tableToClean.length; i++) {
+
             for (int j = 0; j < tableToClean.length; i = i + 2) {
-               
+                tableToClean[j] = 0;
             }
         }
         return tableToClean;
     }
 
-
+//    public static int numberOfPrime(int[] table) {
+//        for (int i = 0; i < table.length; i++) {
+//        }
 }
+
+
+
