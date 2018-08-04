@@ -3,14 +3,22 @@ package pl.coderstrust.sieve;
 import java.util.Arrays;
 
 public class SieveOfEratosthenes {
-    public static void main(String[] args) {
-        int[] table = createTable(20);
-        System.out.println(Arrays.toString(table));
-        System.out.println(Arrays.toString(removeMultipliersOfTwo(table)));
+    private static int marker = 0;
 
+    public static void main(String[] args) {
+        int[] table = sieve(20);
+        System.out.println(Arrays.toString(table));
     }
 
-    public static int[] createTable(int maximumNumber) {
+    private static int[] sieve(int maximumNumber) {
+        int[] table = createTable(maximumNumber);
+        for (int i = 2; i < maximumNumber; i++) {
+            removeMultipliers(table, i);
+        }
+        return collectPrimes(table);
+    }
+
+    private static int[] createTable(int maximumNumber) {
         int[] table = new int[maximumNumber];
         for (int i = 0; i < maximumNumber; i++) {
             table[i] = i;
@@ -18,21 +26,25 @@ public class SieveOfEratosthenes {
         return table;
     }
 
-    public static int[] removeMultipliersOfTwo(int[] table) {
-        int[] tableToClean = Arrays.copyOf(table, table.length);
-        for (int i = 2; i * i < tableToClean.length; i++) {
-
-            for (int j = 0; j < tableToClean.length; i = i + 2) {
-                tableToClean[j] = 0;
+    private static int[] collectPrimes(int[] table) {
+        int counter = 0;
+        for (int i = 2; i < table.length; i++) {
+            if (table[i] != marker) {
+                counter++;
             }
         }
-        return tableToClean;
+        int[] primes = new int[counter];
+        for (int i = 2, j = 0; i < table.length; i++) {
+            if (table[i] != marker) {
+                primes[j++] = i;
+            }
+        }
+        return primes;
     }
 
-//    public static int numberOfPrime(int[] table) {
-//        for (int i = 0; i < table.length; i++) {
-//        }
+    private static void removeMultipliers(int[] table, int number) {
+        for (int i = number + number; i < table.length; i = i + number) {
+            table[i] = marker;
+        }
+    }
 }
-
-
-
