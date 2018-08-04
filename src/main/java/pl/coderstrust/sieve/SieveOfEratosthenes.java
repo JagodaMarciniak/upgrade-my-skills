@@ -20,9 +20,9 @@ public class SieveOfEratosthenes {
 
     public static int[] removeMultipliersOfTwo(int[] table) {
         int[] tableToClean = Arrays.copyOf(table, table.length);
-        for (int i = 2; i * i < tableToClean.length; i++) {
+        for (int i = 0; i * i < tableToClean.length; i++) {
             for (int j = 0; j < tableToClean.length; i = i + 2) {
-                tableToClean[i] = 0;
+               
             }
         }
         return tableToClean;
