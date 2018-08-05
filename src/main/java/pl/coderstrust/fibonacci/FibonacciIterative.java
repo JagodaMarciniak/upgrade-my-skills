@@ -7,13 +7,12 @@ public class FibonacciIterative {
     }
 
     private static long fibonacci(int fibonacciNumberInOrder) {
-        int rightFibNumber = 0;
-        int previousFibNumber = 1;
+        int actualValue = 0;
+        int previousValue = 1;
         for (int i = 0; i < fibonacciNumberInOrder; i++) {
-            int temp = rightFibNumber;
-            rightFibNumber += previousFibNumber;
-            previousFibNumber = temp;
+            previousValue += actualValue;
+            actualValue = previousValue - actualValue;
         }
-        return rightFibNumber;
+        return actualValue;
     }
 }
