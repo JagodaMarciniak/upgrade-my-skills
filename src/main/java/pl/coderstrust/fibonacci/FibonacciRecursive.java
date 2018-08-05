@@ -2,7 +2,8 @@ package pl.coderstrust.fibonacci;
 
 public class FibonacciRecursive {
     public static void main(String[] args) {
-        System.out.println(fibonacci(10));
+        System.out.println(fibonacci(-1));
+        System.out.println(fibonacci(8));
     }
 
     private static long fibonacci(int fibonacciNumberInOrder) {
