@@ -1,16 +1,32 @@
 package pl.coderstrust.foobar;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class FooBar {
     public static void main(String[] args) {
-        for (int i = 0; i <= 100; i++) {
-            System.out.print(i);
+        System.out.println(getFooBar(1));
+    }
+
+    public static List<String> getFooBar(int size) {
+        if (size < 0) {
+            return new ArrayList<String>(Collections.singletonList("Invalid value"));
+        }
+        List<String> result = new ArrayList<String>();
+        StringBuilder storage = new StringBuilder();
+        for (int i = 0; i < size; i++) {
+            storage.append(i + " ");
             if (i % 3 == 0) {
-                System.out.print(" Foo");
+                storage.append("Foo");
             }
             if (i % 5 == 0) {
-                System.out.print(" Bar");
+                storage.append("Bar");
             }
-            System.out.println();
+
+            result.add(storage.toString());
+            storage.delete(0, storage.length());
         }
+        return result;
     }
 }
