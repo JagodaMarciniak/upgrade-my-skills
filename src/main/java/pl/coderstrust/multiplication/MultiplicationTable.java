@@ -1,37 +1,25 @@
 package pl.coderstrust.multiplication;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class MultiplicationTable {
     public static void main(String[] args) {
-
-        int[][] myTable = createMultiplicationTable(10);
-        printMultiplicationTable(myTable);
-        System.out.println();
-        System.out.print(Arrays.deepToString(myTable));
+        printMultiplicationTable(5);
     }
 
-    public static int[][] createMultiplicationTable(int size) {
-        if (size < 0) {
-            int[][] defaultValue = {};
-            return defaultValue;
+    public static ArrayList printMultiplicationTable(int size) {
+        ArrayList<String> result = new ArrayList<String>();
+        if (size <= 0) {
+            return new ArrayList<String>(Collections.singleton("Invalid value"));
         }
         int[][] multiplicationTable = new int[size][size];
-        System.out.println();
         for (int row = 0; row < multiplicationTable.length; row++) {
             for (int col = 0; col < multiplicationTable[row].length; col++) {
                 multiplicationTable[row][col] = (row + 1) * (col + 1);
             }
         }
-        return multiplicationTable;
-    }
 
-    public static void printMultiplicationTable(int[][] myTable) {
-        for (int row = 0; row < myTable.length; row++) {
-            for (int column = 0; column < myTable[row].length; column++) {
-                System.out.printf("%2d ", myTable[row][column]);
-            }
-            System.out.println();
-        }
+        return result;
     }
 }
