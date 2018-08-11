@@ -6,17 +6,16 @@ public class MultiplicationTable {
     public static void main(String[] args) {
 
         int[][] myTable = createMultiplicationTable(10);
-        System.out.print(Arrays.deepToString(myTable));
+        printMultiplicationTable(myTable);
         System.out.println();
-        for (int row = 0; row < myTable.length; row++) {
-            for (int column = 0; column < myTable[row].length; column++) {
-                System.out.printf("%2d ", myTable[row][column]);
-            }
-            System.out.println();
-        }
+        System.out.print(Arrays.deepToString(myTable));
     }
 
     public static int[][] createMultiplicationTable(int size) {
+        if (size < 0) {
+            int[][] defaultValue = {};
+            return defaultValue;
+        }
         int[][] multiplicationTable = new int[size][size];
         System.out.println();
         for (int row = 0; row < multiplicationTable.length; row++) {
@@ -25,5 +24,14 @@ public class MultiplicationTable {
             }
         }
         return multiplicationTable;
+    }
+
+    public static void printMultiplicationTable(int[][] myTable) {
+        for (int row = 0; row < myTable.length; row++) {
+            for (int column = 0; column < myTable[row].length; column++) {
+                System.out.printf("%2d ", myTable[row][column]);
+            }
+            System.out.println();
+        }
     }
 }

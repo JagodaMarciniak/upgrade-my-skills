@@ -1,11 +1,13 @@
 package pl.coderstrust.multiplication;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+
+import static org.junit.Assert.assertArrayEquals;
 
 public class MultiplicationTableTest {
 
-    @org.junit.Test
-    public void shouldTestCreateMultiplicationTableWithSize10() {
+    @Test
+    public void shouldTestCreatingTableWithPositiveValues() {
         // when
         int size = 10;
         int[][] expected = {{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}, {
@@ -16,6 +18,28 @@ public class MultiplicationTableTest {
         // given
         int[][] actual = MultiplicationTable.createMultiplicationTable(size);
         // then
-        assertEquals(expected, actual);
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldTestCreatingTableWithZeroValue() {
+        // when
+        int size = 0;
+        int[][] expected = {};
+        // given
+        int[][] actual = MultiplicationTable.createMultiplicationTable(size);
+        // then
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldTestCreatingTableWithNegativeValues() {
+        // when
+        int size = 0;
+        int[][] expected = {};
+        // given
+        int[][] actual = MultiplicationTable.createMultiplicationTable(size);
+        // then
+        assertArrayEquals(expected, actual);
     }
 }
