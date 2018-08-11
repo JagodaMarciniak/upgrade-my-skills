@@ -5,8 +5,7 @@ import java.util.List;
 
 public class ChristmasTree {
     public static void main(String[] args) {
-        System.out.println(printChristmasTree(6));
-
+        System.out.println(printChristmasTree(10));
     }
 
     public static List<String> printChristmasTree(int height) {
@@ -19,12 +18,13 @@ public class ChristmasTree {
             for (int k = 0; k < (2 * i + 1); k++) {
                 storage.append("*");
             }
-            result.add(storage.toString());
+            storage.append("\n ");
         }
         for (int i = 0; i < height - 1; i++) {
-            System.out.print(" ");
+            storage.append(" ");
         }
-        System.out.print("**");
+        storage.append("**");
+        result.add(storage.toString());
         return result;
     }
 }
