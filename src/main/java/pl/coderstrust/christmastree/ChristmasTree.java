@@ -5,11 +5,11 @@ import java.util.List;
 
 public class ChristmasTree {
     public static void main(String[] args) {
-        printChristmasTree(6);
-        
+        System.out.println(printChristmasTree(6));
+
     }
 
-    public static List printChristmasTree(int height) {
+    public static List<String> printChristmasTree(int height) {
         List<String> result = new ArrayList<String>();
         StringBuilder storage = new StringBuilder();
         for (int i = 0; i < height; i++) {
