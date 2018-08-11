@@ -18,7 +18,7 @@ public class MultiplicationTableTest {
 
 //         given
         ArrayList<String> actual = new ArrayList<String>();
-            actual = MultiplicationTable.printMultiplicationTable(size);
+        actual = MultiplicationTable.printMultiplicationTable(size);
 
         // then
         assertTrue(expected.equals(actual));
