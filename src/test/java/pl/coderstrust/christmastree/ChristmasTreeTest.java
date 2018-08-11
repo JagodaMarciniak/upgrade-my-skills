@@ -15,8 +15,10 @@ public class ChristmasTreeTest {
 //        when
         int size = 0;
         List<String> expected = new ArrayList<String>(Collections.singletonList("Invalid value"));
+
 //        given
         List<String> actual = new ArrayList<String>(ChristmasTree.printChristmasTree(size));
+
 //        then
         assertTrue(expected.equals(actual));
     }
@@ -25,8 +27,10 @@ public class ChristmasTreeTest {
 //        when
         int size = -5;
         List<String> expected = new ArrayList<String>(Collections.singletonList("Invalid value"));
+
 //        given
         List<String> actual = new ArrayList<String>(ChristmasTree.printChristmasTree(size));
+
 //        then
         assertTrue(expected.equals(actual));
     }
@@ -40,6 +44,7 @@ public class ChristmasTreeTest {
 
 //        given
         List<String> actual = new ArrayList<String>(ChristmasTree.printChristmasTree(size));
+
 //        then
         assertTrue(expected.equals(actual));
     }
