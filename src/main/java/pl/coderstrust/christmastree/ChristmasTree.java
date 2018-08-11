@@ -12,7 +12,7 @@ public class ChristmasTree {
         List<String> result = new ArrayList<String>();
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < height - i; j++) {
-              storage.append(" ");
+                System.out.print(" ");
             }
             for (int k = 0; k < (2 * i + 1); k++) {
                 System.out.print("*");
