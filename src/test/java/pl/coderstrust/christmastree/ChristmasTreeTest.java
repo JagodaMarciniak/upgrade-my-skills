@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
 public class ChristmasTreeTest {
 
     @Test
-    public void testZeroValue() {
+    public void testSizeOfZero() {
         //when
         int size = 0;
         List<String> expected = new ArrayList<String>(Collections.singletonList("Invalid value"));
@@ -23,7 +23,7 @@ public class ChristmasTreeTest {
         assertTrue(expected.equals(actual));
     }
 
-    public void testNegativeValues() {
+    public void testNegativeSize() {
         //when
         int size = -5;
         List<String> expected = new ArrayList<String>(Collections.singletonList("Invalid value"));
@@ -36,16 +36,16 @@ public class ChristmasTreeTest {
     }
 
     @Test
-    public void testPositiveValues() {
+    public void testSizeofFive() {
         //when
         int size = 5;
         List<String> expected = new ArrayList<String>();
-        expected.add("     *");
-        expected.add("     ***");
-        expected.add("    *****");
-        expected.add("   *******");
-        expected.add("  *********");
-        expected.add("     **");
+        expected.add("    *");
+        expected.add("   ***");
+        expected.add("  *****");
+        expected.add(" *******");
+        expected.add("*********");
+        expected.add("   **");
 
         //given
         List<String> actual = new ArrayList<String>(ChristmasTree.getChristmasTree(size));
