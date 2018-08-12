@@ -11,41 +11,46 @@ import static org.junit.Assert.assertTrue;
 public class ChristmasTreeTest {
 
     @Test
-    public void shouldTestZeroValue() {
-//        when
+    public void testZeroValue() {
+        //when
         int size = 0;
         List<String> expected = new ArrayList<String>(Collections.singletonList("Invalid value"));
 
-//        given
-        List<String> actual = new ArrayList<String>(ChristmasTree.printChristmasTree(size));
+        //given
+        List<String> actual = new ArrayList<String>(ChristmasTree.getChristmasTree(size));
 
-//        then
+        //then
         assertTrue(expected.equals(actual));
     }
 
-    public void shouldTestNegativeValues() {
-//        when
+    public void testNegativeValues() {
+        //when
         int size = -5;
         List<String> expected = new ArrayList<String>(Collections.singletonList("Invalid value"));
 
-//        given
-        List<String> actual = new ArrayList<String>(ChristmasTree.printChristmasTree(size));
+        //given
+        List<String> actual = new ArrayList<String>(ChristmasTree.getChristmasTree(size));
 
-//        then
+        //then
         assertTrue(expected.equals(actual));
     }
 
     @Test
-    public void shouldTestPositiveValues() {
-//        when
+    public void testPositiveValues() {
+        //when
         int size = 5;
         List<String> expected = new ArrayList<String>();
-        expected.add(".....*\n.....***\n....*****\n...*******\n..*********\n.....**");
+        expected.add("     *");
+        expected.add("     ***");
+        expected.add("    *****");
+        expected.add("   *******");
+        expected.add("  *********");
+        expected.add("     **");
 
-//        given
-        List<String> actual = new ArrayList<String>(ChristmasTree.printChristmasTree(size));
+        //given
+        List<String> actual = new ArrayList<String>(ChristmasTree.getChristmasTree(size));
 
-//        then
+        //then
         assertTrue(expected.equals(actual));
     }
 }
