@@ -23,6 +23,7 @@ public class ChristmasTreeTest {
         assertTrue(expected.equals(actual));
     }
 
+    @Test
     public void testNegativeSize() {
         //when
         int size = -5;
