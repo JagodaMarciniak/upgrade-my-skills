@@ -10,7 +10,7 @@ import static org.junit.Assert.assertTrue;
 
 public class FooBarTest {
     @Test
-    public void shouldTestZeroValue() {
+    public void testSizeOfZero() {
         //Given
         int size = 1;
         List<String> expected = new ArrayList<String>();
@@ -24,7 +24,7 @@ public class FooBarTest {
     }
 
     @Test
-    public void shouldTestPositiveValues() {
+    public void testSizeOfTen() {
         //Given
         int size = 10;
         List<String> expected = new ArrayList<String>();
@@ -47,7 +47,7 @@ public class FooBarTest {
     }
 
     @Test
-    public void shouldTestNegativeValues() {
+    public void testNegativeSize() {
         //Given
         int size = -5;
         List<String> expected = new ArrayList(Collections.singletonList("Invalid value"));

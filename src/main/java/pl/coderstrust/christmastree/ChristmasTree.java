@@ -1,23 +1,40 @@
 package pl.coderstrust.christmastree;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class ChristmasTree {
     public static void main(String[] args) {
-        printChristmasTree(6);
+        List<String> christmasTree = getChristmasTree(5);
+        for (String line : christmasTree) {
+            System.out.println(line);
+        }
     }
 
-    public static void printChristmasTree(int height) {
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < height - i; j++) {
-                System.out.print(" ");
-            }
-            for (int k = 0; k < (2 * i + 1); k++) {
-                System.out.print("*");
-            }
-            System.out.println();
+    public static List<String> getChristmasTree(int size) {
+        if (size <= 0) {
+            return new ArrayList<String>(Collections.singletonList("Invalid value"));
         }
-        for (int i = 0; i < height - 1; i++) {
-            System.out.print(" ");
+        List<String> result = new ArrayList<String>();
+        StringBuilder storage = new StringBuilder();
+        for (int i = 1; i <= size; i++) {
+            for (int j = 0; j < size - i; j++) {
+                storage.append(" ");
+            }
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                storage.append("*");
+            }
+            result.add(storage.toString());
+            storage.delete(0, storage.length());
         }
-        System.out.print("**");
+
+        for (int i = 0; i < size - 2; i++) {
+            storage.append(" ");
+        }
+        storage.append("**");
+        result.add(storage.toString());
+        storage.delete(0, storage.length());
+        return result;
     }
 }
