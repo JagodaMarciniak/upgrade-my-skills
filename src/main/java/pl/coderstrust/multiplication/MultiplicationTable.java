@@ -18,11 +18,12 @@ public class MultiplicationTable {
         int[][] multiplicationTable = new int[size][size];
         for (int row = 0; row < multiplicationTable.length; row++) {
             for (int col = 0; col < multiplicationTable[row].length; col++) {
-                
                 multiplicationTable[row][col] = (row + 1) * (col + 1);
                 int number = multiplicationTable[row][col];
-                storage.append(" " + number);
+                storage.append(number + " ");
             }
+            result.add(storage.toString());
+            storage.delete(0, storage.length());
         }
         result.add(storage.toString());
         storage.delete(0, storage.length());

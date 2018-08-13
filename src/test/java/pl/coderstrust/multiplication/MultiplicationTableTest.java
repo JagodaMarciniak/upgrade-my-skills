@@ -40,7 +40,11 @@ public class MultiplicationTableTest {
         // given
         int size = 5;
         List<String> expected = new ArrayList<String>();
-        expected.add(" 1 2 3 4 5 2 4 6 8 10 3 6 9 12 15 4 8 12 16 20 5 10 15 20 25");
+        expected.add("1 2 3 4 5 ");
+        expected.add("2 4 6 8 10 ");
+        expected.add("3 6 9 12 15 ");
+        expected.add("4 8 12 16 20 ");
+        expected.add("5 10 15 20 25 ");
 
         // when
         List<String> actual = new ArrayList<String>(MultiplicationTable.getMultiplicationTable(size));
