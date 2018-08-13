@@ -10,23 +10,25 @@ public class PascalTriangle {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the height of the triangle : ");
         int size = input.nextInt();
-        getPascalTriangle(size);
+        System.out.println(getPascalTriangle(size));
     }
 
     public static List<String> getPascalTriangle(int size) {
         List<String> result = new ArrayList<String>();
         StringBuilder storage = new StringBuilder();
         for (int i = 0; i < size; i++) {
-            int number = 1;
-            storage.append(number);
-            for (int k = 0; k < (size - i) * 2; k++) {
+            for (int k = 0; k < (size - i - 1) * 2; k++) {
                 System.out.print(" ");
                 storage.append(" ");
             }
+            int number = 1;
+
             for (int j = 0; j <= i; j++) {
+                if (number != 0) {
+                    storage.append(number);
+                }
                 System.out.printf("%4d", number);
                 number = number * (i - j) / (j + 1);
-                storage.append(number);
             }
             System.out.println();
             result.add(storage.toString());
