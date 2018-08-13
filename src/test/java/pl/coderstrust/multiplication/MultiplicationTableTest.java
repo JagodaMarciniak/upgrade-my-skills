@@ -10,42 +10,40 @@ import static org.junit.Assert.assertTrue;
 
 public class MultiplicationTableTest {
     @Test
-    public void shouldTestZeroValue() {
-        // when
+    public void testZeroValue() {
+        // given
         int size = 0;
         List<String> expected = new ArrayList<String>(Collections.singleton("Invalid value"));
 
-//         given
-        List<String> actual = new ArrayList<String>(MultiplicationTable.printMultiplicationTable(size));
-
+        // when
+        List<String> actual = new ArrayList<String>(MultiplicationTable.getMultiplicationTable(size));
 
         // then
         assertTrue(expected.equals(actual));
     }
 
     @Test
-    public void shouldTestNegativeValues() {
-        // when
+    public void testNegativeValues() {
+        // given
         int size = -8;
         List<String> expected = new ArrayList<String>(Collections.singleton("Invalid value"));
 
-//         given
-        List<String> actual = new ArrayList<String>(MultiplicationTable.printMultiplicationTable(size));
-
+        // when
+        List<String> actual = new ArrayList<String>(MultiplicationTable.getMultiplicationTable(size));
 
         // then
         assertTrue(expected.equals(actual));
     }
 
     @Test
-    public void shouldTestPositiveValues() {
-        // when
-        int size = 10;
-        List<String> expected = new ArrayList<String>();
-
-
+    public void testSizeOfFive() {
         // given
-        List<String> actual = new ArrayList<String>(MultiplicationTable.printMultiplicationTable(size));
+        int size = 5;
+        List<String> expected = new ArrayList<String>();
+        expected.add(" 1 2 3 4 5 2 4 6 8 10 3 6 9 12 15 4 8 12 16 20 5 10 15 20 25");
+
+        // when
+        List<String> actual = new ArrayList<String>(MultiplicationTable.getMultiplicationTable(size));
 
         // then
         assertTrue(expected.equals(actual));
