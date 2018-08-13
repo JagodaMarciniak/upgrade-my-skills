@@ -10,7 +10,7 @@ import static org.junit.Assert.assertTrue;
 
 public class MultiplicationTableTest {
     @Test
-    public void testZeroValue() {
+    public void testZeroSize() {
         // given
         int size = 0;
         List<String> expected = new ArrayList<String>(Collections.singleton("Invalid value"));
@@ -23,7 +23,7 @@ public class MultiplicationTableTest {
     }
 
     @Test
-    public void testNegativeValues() {
+    public void testNegativeSize() {
         // given
         int size = -8;
         List<String> expected = new ArrayList<String>(Collections.singleton("Invalid value"));
