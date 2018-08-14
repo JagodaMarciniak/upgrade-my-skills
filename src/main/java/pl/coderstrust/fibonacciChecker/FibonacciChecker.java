@@ -1,4 +1,4 @@
-package pl.coderstrust;
+package pl.coderstrust.fibonacciChecker;
 
 public class FibonacciChecker {
 

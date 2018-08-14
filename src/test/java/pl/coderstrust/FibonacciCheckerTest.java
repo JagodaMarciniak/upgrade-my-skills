@@ -1,6 +1,7 @@
 package pl.coderstrust;
 
 import org.junit.Test;
+import pl.coderstrust.fibonacciChecker.FibonacciChecker;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
