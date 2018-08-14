@@ -6,7 +6,7 @@ import static org.junit.Assert.assertArrayEquals;
 
 public class MultiplicationTableTest {
     @Test
-    public void testZeroSize() {
+    public void testSizeOfZero() {
         // given
         int size = 0;
         int[][] expected = new int[0][0];

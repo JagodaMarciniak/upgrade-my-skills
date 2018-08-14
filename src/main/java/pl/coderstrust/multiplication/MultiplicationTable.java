@@ -16,7 +16,6 @@ public class MultiplicationTable {
         for (int row = 0; row < multiplicationTable.length; row++) {
             for (int col = 0; col < multiplicationTable[row].length; col++) {
                 multiplicationTable[row][col] = (row + 1) * (col + 1);
-                int number = multiplicationTable[row][col];
             }
         }
         return multiplicationTable;
