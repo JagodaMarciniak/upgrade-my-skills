@@ -3,7 +3,7 @@ package pl.coderstrust.fibonacciChecker;
 public class FibonacciChecker {
 
     public static void main(String[] args) {
-        System.out.println(isFibonacciNumber(21));
+        System.out.println(isFibonacciNumber(17711));
     }
 
     public static boolean isFibonacciNumber(long number) {

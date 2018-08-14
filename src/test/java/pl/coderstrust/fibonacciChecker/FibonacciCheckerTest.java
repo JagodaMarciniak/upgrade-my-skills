@@ -1,7 +1,6 @@
-package pl.coderstrust;
+package pl.coderstrust.fibonacciChecker;
 
 import org.junit.Test;
-import pl.coderstrust.fibonacciChecker.FibonacciChecker;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -44,9 +43,9 @@ public class FibonacciCheckerTest {
     }
 
     @Test
-    public void testNumberOfTwoHundredAndThirtyThree() {
+    public void testNumberOf17711() {
         //given
-        long number = 233;
+        long number = 17711;
 
         //when
         boolean expected = FibonacciChecker.isFibonacciNumber(number);
