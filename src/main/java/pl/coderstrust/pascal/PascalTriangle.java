@@ -1,6 +1,7 @@
 package pl.coderstrust.pascal;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,6 +15,9 @@ public class PascalTriangle {
     }
 
     public static List<String> getPascalTriangle(int size) {
+        if (size <= 0) {
+            return new ArrayList<String>(Collections.singletonList("Invalid value"));
+        }
         List<String> result = new ArrayList<String>();
         StringBuilder storage = new StringBuilder();
         for (int i = 0; i < size; i++) {
@@ -22,10 +26,9 @@ public class PascalTriangle {
                 storage.append(" ");
             }
             int number = 1;
-
             for (int j = 0; j <= i; j++) {
                 if (number != 0) {
-                    storage.append(number);
+                    storage.append(number + " ");
                 }
                 System.out.printf("%4d", number);
                 number = number * (i - j) / (j + 1);
