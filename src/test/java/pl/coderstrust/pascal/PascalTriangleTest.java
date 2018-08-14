@@ -40,12 +40,12 @@ public class PascalTriangleTest {
         //when
         int size = 6;
         List<String> expected = new ArrayList<String>();
-        expected.add("           1 ");
-        expected.add("         1 1 ");
-        expected.add("       1 2 1 ");
-        expected.add("     1 3 3 1 ");
-        expected.add("   1 4 6 4 1 ");
-        expected.add(" 1 5 10 10 5 1 ");
+        expected.add("1");
+        expected.add("11");
+        expected.add("121");
+        expected.add("1331");
+        expected.add("14641");
+        expected.add("15101051");
 
         //given
         List<String> actual = new ArrayList<String>(PascalTriangle.getPascalTriangle(size));

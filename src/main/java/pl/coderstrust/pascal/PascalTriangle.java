@@ -21,19 +21,11 @@ public class PascalTriangle {
         List<String> result = new ArrayList<String>();
         StringBuilder storage = new StringBuilder();
         for (int i = 0; i < size; i++) {
-            for (int k = 0; k < (size - i - 1) * 2; k++) {
-                System.out.print(" ");
-                storage.append(" ");
-            }
             int number = 1;
             for (int j = 0; j <= i; j++) {
-                if (number != 0) {
-                    storage.append(number + " ");
-                }
-                System.out.printf("%4d", number);
+                storage.append(number);
                 number = number * (i - j) / (j + 1);
             }
-            System.out.println();
             result.add(storage.toString());
             storage.delete(0, storage.length());
         }
