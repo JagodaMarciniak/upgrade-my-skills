@@ -10,47 +10,38 @@ public class FibonacciCheckerTest {
     public void testNumberOfZero() {
         //given
         int number = 0;
+        boolean expected = false;
 
         //when
-        boolean expected = FibonacciChecker.isFibonacciNumber(number);
+        boolean result = FibonacciChecker.isFibonacciNumber(number);
 
         //then
-        assertFalse(expected);
+        assertFalse(result);
     }
 
     @Test
     public void testNegativeNumber() {
         //given
         int number = -10;
+        boolean expected = false;
 
         //when
-        boolean expected = FibonacciChecker.isFibonacciNumber(number);
+        boolean result = FibonacciChecker.isFibonacciNumber(number);
 
         //then
-        assertFalse(expected);
-    }
-
-    @Test
-    public void testNumberOfTwentyOne() {
-        //given
-        int number = 21;
-
-        //when
-        boolean expected = FibonacciChecker.isFibonacciNumber(number);
-
-        //then
-        assertTrue(expected);
+        assertFalse(result);
     }
 
     @Test
     public void testNumberOf17711() {
         //given
         long number = 17711;
+        boolean expected = true;
 
         //when
-        boolean expected = FibonacciChecker.isFibonacciNumber(number);
+        boolean result = FibonacciChecker.isFibonacciNumber(number);
 
         //then
-        assertTrue(expected);
+        assertTrue(result);
     }
 }
