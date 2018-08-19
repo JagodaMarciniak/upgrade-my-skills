@@ -12,10 +12,16 @@ import static org.junit.Assert.assertThat;
 public class FibonacciCheckerTest {
     @Parameters({"0, false",
             "-10, false",
-            "17711, true"})
+            "50, false",
+            "2, true",
+            "4, false",
+            "5, true",
+            "10, false",
+            "13, true",
+            "15, false"
+    })
     @Test
     public void testFiboChecker(int number, boolean expected) {
-        //given
 
         //when
         boolean result = FibonacciChecker.isFibonacciNumber(number);
