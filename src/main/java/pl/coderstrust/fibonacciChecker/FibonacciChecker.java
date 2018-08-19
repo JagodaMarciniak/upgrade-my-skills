@@ -1,6 +1,10 @@
 package pl.coderstrust.fibonacciChecker;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class FibonacciChecker {
+    private static Map<Long, Boolean> cache = new HashMap<>();
 
     public static void main(String[] args) {
         System.out.println(isFibonacciNumber(17711));
@@ -10,10 +14,15 @@ public class FibonacciChecker {
         if (number < 2) {
             return false;
         }
+        if (cache.containsKey(number)) {
+            return cache.get(number);
+        }
 
         long variant1 = recognizingFibNumFormula(number, true);
         long variant2 = recognizingFibNumFormula(number, false);
-        return isperfectSquare(variant1) || isperfectSquare(variant2);
+        boolean result = isperfectSquare(variant1) || isperfectSquare(variant2);
+        cache.put(number, result);
+        return result;
     }
 
     private static boolean isperfectSquare(long number) {
@@ -21,8 +30,8 @@ public class FibonacciChecker {
         return value * value == number;
     }
 
-    private static long recognizingFibNumFormula(long numer, boolean plus) {
-        long value = numer * numer * 5;
+    private static long recognizingFibNumFormula(long number, boolean plus) {
+        long value = number * number * 5;
         long offset = 4;
         return plus ? value + offset : value - offset;
     }
