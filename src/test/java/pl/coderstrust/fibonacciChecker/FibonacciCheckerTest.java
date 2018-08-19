@@ -1,48 +1,26 @@
 package pl.coderstrust.fibonacciChecker;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
+@RunWith(JUnitParamsRunner.class)
 public class FibonacciCheckerTest {
-
+    @Parameters({"0, false",
+            "-10, false",
+            "17711, true"})
     @Test
-    public void testNumberOfZero() {
+    public void testFiboChecker(int number, boolean expected) {
         //given
-        int number = 0;
-        boolean expected = false;
 
         //when
         boolean result = FibonacciChecker.isFibonacciNumber(number);
 
         //then
-        assertFalse(result);
-    }
-
-    @Test
-    public void testNegativeNumber() {
-        //given
-        int number = -10;
-        boolean expected = false;
-
-        //when
-        boolean result = FibonacciChecker.isFibonacciNumber(number);
-
-        //then
-        assertFalse(result);
-    }
-
-    @Test
-    public void testNumberOf17711() {
-        //given
-        long number = 17711;
-        boolean expected = true;
-
-        //when
-        boolean result = FibonacciChecker.isFibonacciNumber(number);
-
-        //then
-        assertTrue(result);
+        assertThat(result, is(expected));
     }
 }
