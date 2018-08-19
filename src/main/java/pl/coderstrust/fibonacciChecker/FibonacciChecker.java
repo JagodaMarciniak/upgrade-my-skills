@@ -10,14 +10,24 @@ public class FibonacciChecker {
         if (number < 2) {
             return false;
         }
-        long recognizingPerfectSquareFormula1 = number * number * 5 + 4;
-        long recognizingPerfectSquareFormula2 = number * number * 5 - 4;
-        double perfectSquareVariant1 = Math.sqrt(recognizingPerfectSquareFormula1);
-        double perfectSquareVariant2 = Math.sqrt(recognizingPerfectSquareFormula2);
-        if ((int) perfectSquareVariant1 * (int) perfectSquareVariant1 == recognizingPerfectSquareFormula1
-                || (int) perfectSquareVariant2 * (int) perfectSquareVariant2 == recognizingPerfectSquareFormula2) {
+        long variant1 = recognizingFibNumFormula1(number);
+        long variant2 = recognizingFibNumFormula2(number);
+        return isperfectSquare(variant1) || isperfectSquare(variant2);
+    }
+
+    private static boolean isperfectSquare(long number) {
+        int value = (int) Math.sqrt(number);
+        if (value * value == number) {
             return true;
         }
         return false;
+    }
+
+    private static long recognizingFibNumFormula1(long number) {
+        return number * number * 5 + 4;
+    }
+
+    private static long recognizingFibNumFormula2(long number) {
+        return number * number * 5 - 4;
     }
 }
