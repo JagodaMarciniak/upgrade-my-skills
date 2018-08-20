@@ -13,11 +13,10 @@ public class FibonacciChecker {
     public static boolean isFibonacciNumber(long number) {
         if (cache.containsKey(number)) {
             return cache.get(number);
-        } else {
-            boolean result = IsFibonacciNumber(number);
-            cache.put(number, result);
-            return result;
         }
+        boolean result = IsFibonacciNumber(number);
+        cache.put(number, result);
+        return result;
     }
 
     private static boolean IsFibonacciNumber(long number) {
