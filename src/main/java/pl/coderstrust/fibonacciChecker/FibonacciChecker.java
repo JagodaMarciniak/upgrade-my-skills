@@ -1,33 +1,26 @@
 package pl.coderstrust.fibonacciChecker;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FibonacciChecker {
-    private static Set<Long> cacheTrue = new HashSet<>();
-    private static Set<Long> cacheFalse = new HashSet<>();
+    private static Map<Long, Boolean> cache = new HashMap();
 
     public static void main(String[] args) {
         System.out.println(isFibonacciNumber(17711));
     }
 
     public static boolean isFibonacciNumber(long number) {
-        if (cacheTrue.contains(number)) {
-            return true;
-        }
-        if (cacheFalse.contains(number)) {
-            return false;
-        }
-        if (nocacheIsFibonacciNumber(number)) {
-            cacheTrue.add(number);
-            return true;
+        if (cache.containsKey(number)) {
+            return cache.get(number);
         } else {
-            cacheFalse.add(number);
-            return false;
+            boolean result = IsFibonacciNumber(number);
+            cache.put(number, result);
+            return result;
         }
     }
 
-    private static boolean nocacheIsFibonacciNumber(long number) {
+    private static boolean IsFibonacciNumber(long number) {
         if (number < 2) {
             return false;
         }
