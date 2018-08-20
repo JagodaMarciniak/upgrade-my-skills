@@ -1,4 +1,4 @@
-package pl.coderstrust.timeCompareSorting;
+package pl.coderstrust.sort;
 
 
 import org.junit.Test;
@@ -6,6 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertArrayEquals;
 
 public abstract class SortingTestBase {
+
     public abstract SortingMethod getSortingMethod();
 
     @Test
@@ -16,7 +17,8 @@ public abstract class SortingTestBase {
 
         // when
         long startTime = System.currentTimeMillis();
-        int[] result = getSortingMethod().sort(given);
+        SortingMethod test = getSortingMethod();
+        int[] result = test.sort(given);
         long endTime = System.currentTimeMillis();
 
         System.out.println(endTime - startTime);
