@@ -22,7 +22,6 @@ public class FibonacciCheckerTest {
     })
     @Test
     public void testFiboChecker(int number, boolean expected) {
-
         //when
         boolean result = FibonacciChecker.isFibonacciNumber(number);
 
