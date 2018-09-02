@@ -14,12 +14,12 @@ public class FibonacciChecker {
         if (cache.containsKey(number)) {
             return cache.get(number);
         }
-        boolean result = IsFibonacciNumber(number);
+        boolean result = isFibonacci(number);
         cache.put(number, result);
         return result;
     }
 
-    private static boolean IsFibonacciNumber(long number) {
+    private static boolean isFibonacci(long number) {
         if (number < 2) {
             return false;
         }
