@@ -1,5 +1,8 @@
 package pl.coderstrust.numbersProcessor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Processor {
     private NumbersProcessor numbersProcessor;
     private FileProcessor fileProcessor;
@@ -9,12 +12,12 @@ public class Processor {
         this.fileProcessor = fileProcessor;
     }
 
-//    public void process(String fileName, String resultFileName) {
-//        List<String> linesFromFile = fileProcessor.readLinesFromFile(fileName);
-//        List<String> resultLines = new ArrayList<>();
-//        for (String line : linesFromFile) {
-//            resultLines.add(numbersProcessor.processLine(line));
-//        }
-//        fileProcessor.writeLinesToFile(resultLines, resultFileName);
-//    }
+    public void process(String fileName, String resultFileName) {
+        List<String> linesFromFile = fileProcessor.readLinesFromFile(fileName);
+        List<String> resultLines = new ArrayList<>();
+        for (String line : linesFromFile) {
+            resultLines.add(numbersProcessor.processLine(line));
+        }
+        fileProcessor.writeLinesToFile(resultLines, resultFileName);
+    }
 }

@@ -5,12 +5,17 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FileProcessor {
-    public List<String> readLinesFromFile(String filename) {
-        List<String> list = new ArrayList<>();
-        Scanner scanner = new Scanner(filename);
+    public List<String> readLinesFromFile(String filepath) {
+        List<String> lines = new ArrayList<>();
+        Scanner scanner = new Scanner(filepath);
         while (scanner.hasNextLine()) {
-            list.add(scanner.nextLine());
+            lines.add(scanner.nextLine());
         }
-        return list;
+        scanner.close();
+        return lines;
+    }
+
+    public void writeLinesToFile(List<String> lines, String filename) {
+
     }
 }
