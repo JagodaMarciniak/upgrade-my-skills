@@ -25,6 +25,6 @@ public class NumbersProcessor {
         if (line == null) {
             return false;
         }
-        if (line ==)
+        return true;
     }
 }
