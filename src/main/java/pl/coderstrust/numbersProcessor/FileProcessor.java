@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class FileProcessor {
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner scanner = new Scanner(new File("primes"));
+        Scanner scanner = new Scanner(new File("1000"));
         while (scanner.hasNextLine()) {
             System.out.println(scanner.nextLine());
         }
