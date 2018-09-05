@@ -1,5 +1,6 @@
 package pl.coderstrust.figures;
 
-public interface Area {
+public interface Figure {
+
     double calculateArea();
 }

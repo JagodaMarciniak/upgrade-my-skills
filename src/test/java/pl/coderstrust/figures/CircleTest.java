@@ -9,7 +9,7 @@ public class CircleTest {
     @Test
     public void testCalculateArea() {
         //when
-        Area area = new Circle(3);
+        Figure figure = new Circle(3);
         double expected = 28.26;
         //given
 

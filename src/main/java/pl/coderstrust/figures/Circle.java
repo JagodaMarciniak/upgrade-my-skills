@@ -1,21 +1,19 @@
 package pl.coderstrust.figures;
 
-public class Circle implements Area {
+public class Circle implements Figure {
     private double radius;
     final double pi = Math.PI;
-    private double area;
 
     public Circle(double radius) {
         if (radius <= 0) {
             throw new IllegalArgumentException("The 'radius' parameter must be higher that 0");
-        } else
-            this.radius = radius;
-        this.area = pi * radius * radius;
+        }
+        this.radius = radius;
     }
 
     @Override
     public double calculateArea() {
-        return area;
+        return pi * radius * radius;
     }
 
     public double getRadius() {
@@ -25,7 +23,7 @@ public class Circle implements Area {
     public void setRadius(double radius) {
         if (radius <= 0) {
             throw new IllegalArgumentException("You can't set 'radius' parameter lower or equal that 0");
-        } else
-            this.radius = radius;
+        }
+        this.radius = radius;
     }
 }
