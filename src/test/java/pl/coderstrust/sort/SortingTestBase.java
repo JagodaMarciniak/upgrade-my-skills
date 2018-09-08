@@ -21,7 +21,7 @@ public abstract class SortingTestBase {
         int[] result = test.sort(given);
         long endTime = System.currentTimeMillis();
 
-        System.out.println(endTime - startTime);
+        System.out.println("Time: " + (endTime - startTime));
 
         // then
         assertArrayEquals(expected, result);
