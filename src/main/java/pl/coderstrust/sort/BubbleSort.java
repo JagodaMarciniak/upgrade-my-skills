@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class BubbleSort implements SortingMethod {
 
+    @Override
     public int[] sort(int[] array) {
         int[] arrayToSort = Arrays.copyOf(array, array.length);
         for (boolean sorted = false; !sorted; ) {

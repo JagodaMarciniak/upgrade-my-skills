@@ -6,12 +6,11 @@ public class MergeSort implements SortingMethod {
 
     private int[] array;
     private int[] tempMergArr;
-    private int length;
 
     public int[] sort(int array[]) {
         int[] arrayToSort = Arrays.copyOf(array, array.length);
         this.array = arrayToSort;
-        this.length = arrayToSort.length;
+        int length = arrayToSort.length;
         this.tempMergArr = new int[length];
         doMergeSort(0, length - 1);
         return arrayToSort;

@@ -1,6 +1,5 @@
 package pl.coderstrust.sort;
 
-
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
