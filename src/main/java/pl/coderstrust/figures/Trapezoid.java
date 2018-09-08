@@ -15,8 +15,8 @@ public class Trapezoid implements Figure {
             throw new IllegalArgumentException("The 'b' parameter must be higher that 0");
         } else
             this.height = height;
-            this.a = a;
-            this.b = b;
+        this.a = a;
+        this.b = b;
     }
 
     @Override
@@ -32,7 +32,7 @@ public class Trapezoid implements Figure {
         if (height <= 0) {
             throw new IllegalArgumentException("You can't set 'height' parameter lower or equal to 0");
         }
-            this.height = height;
+        this.height = height;
     }
 
     public double getA() {
@@ -43,7 +43,7 @@ public class Trapezoid implements Figure {
         if (a <= 0) {
             throw new IllegalArgumentException("You can't set 'a' parameter lower or equal to 0");
         }
-            this.a = a;
+        this.a = a;
     }
 
     public double getB() {
@@ -54,7 +54,7 @@ public class Trapezoid implements Figure {
         if (b <= 0) {
             throw new IllegalArgumentException("You can't set 'b' parameter lower or equal to 0");
         }
-            this.b = b;
+        this.b = b;
     }
 
     public double getArea() {
@@ -65,6 +65,6 @@ public class Trapezoid implements Figure {
         if (area <= 0) {
             throw new IllegalArgumentException("You can't set 'area' parameter lower or equal to 0");
         }
-            this.area = area;
+        this.area = area;
     }
 }

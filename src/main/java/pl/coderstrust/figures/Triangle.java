@@ -11,7 +11,7 @@ public class Triangle implements Figure {
         } else if (a <= 0) {
             throw new IllegalArgumentException("The 'a' parameter must be higher that 0");
         }
-            this.height = height;
+        this.height = height;
         this.a = a;
 
     }
@@ -29,7 +29,7 @@ public class Triangle implements Figure {
         if (height <= 0) {
             throw new IllegalArgumentException("You can't set 'height' parameter lower than 0 or equal to 0");
         }
-            this.height = height;
+        this.height = height;
 
     }
 
@@ -41,7 +41,7 @@ public class Triangle implements Figure {
         if (a <= 0) {
             throw new IllegalArgumentException("You can't set 'a' parameter lower than 0 or equal to 0");
         }
-            this.a = a;
+        this.a = a;
 
     }
 
@@ -53,7 +53,7 @@ public class Triangle implements Figure {
         if (a <= 0) {
             throw new IllegalArgumentException("You can't set 'area' parameter lower than 0 or equal to 0");
         }
-            this.area = area;
+        this.area = area;
 
     }
 }

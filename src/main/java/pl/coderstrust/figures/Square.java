@@ -1,7 +1,7 @@
 package pl.coderstrust.figures;
 
 public class Square implements Figure {
-private double a;
+    private double a;
 
     public Square(double a) {
         if (a <= 0) {
@@ -12,7 +12,7 @@ private double a;
 
     @Override
     public double calculateArea() {
-        return a*a;
+        return a * a;
     }
 
     public double getA() {

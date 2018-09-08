@@ -10,7 +10,7 @@ public class Rectangle implements Figure {
         } else if (width <= 0) {
             throw new IllegalArgumentException("The 'width' parameter must be higher that 0");
         }
-            this.width = width;
+        this.width = width;
         this.height = height;
 
     }
@@ -19,7 +19,7 @@ public class Rectangle implements Figure {
         if (width <= 0) {
             throw new IllegalArgumentException("The 'width' parameter must be higher that 0");
         }
-            this.width = width;
+        this.width = width;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class Rectangle implements Figure {
         if (width <= 0) {
             throw new IllegalArgumentException("You can't set 'width' parameter lower then 0 or equal to 0");
         }
-            this.width = width;
+        this.width = width;
     }
 
     public double getHeight() {
@@ -50,13 +50,13 @@ public class Rectangle implements Figure {
         if (height <= 0) {
             throw new IllegalArgumentException("You can't set 'height' parameter lower then 0 or equal to 0");
         }
-            this.height = height;
+        this.height = height;
     }
 
     public void setArea(double area) {
         if (area <= 0) {
             throw new IllegalArgumentException("You can't set 'area' parameter lower then 0 or equal to 0");
         }
-            this.area = area;
+        this.area = area;
     }
 }
