@@ -1,6 +1,6 @@
 package pl.coderstrust.figures;
 
-public class Trapezoid implements Area {
+public class Trapezoid implements Figure {
     private double height;
     private double a;
     private double b;
@@ -15,14 +15,13 @@ public class Trapezoid implements Area {
             throw new IllegalArgumentException("The 'b' parameter must be higher that 0");
         } else
             this.height = height;
-        this.a = a;
-        this.b = b;
-        this.area = height * (a + b) / 2;
+            this.a = a;
+            this.b = b;
     }
 
     @Override
     public double calculateArea() {
-        return this.area;
+        return height * (a + b) / 2;
     }
 
     public double getHeight() {
@@ -32,7 +31,7 @@ public class Trapezoid implements Area {
     public void setHeight(double height) {
         if (height <= 0) {
             throw new IllegalArgumentException("You can't set 'height' parameter lower or equal to 0");
-        } else
+        }
             this.height = height;
     }
 
@@ -43,7 +42,7 @@ public class Trapezoid implements Area {
     public void setA(double a) {
         if (a <= 0) {
             throw new IllegalArgumentException("You can't set 'a' parameter lower or equal to 0");
-        } else
+        }
             this.a = a;
     }
 
@@ -54,7 +53,7 @@ public class Trapezoid implements Area {
     public void setB(double b) {
         if (b <= 0) {
             throw new IllegalArgumentException("You can't set 'b' parameter lower or equal to 0");
-        } else
+        }
             this.b = b;
     }
 
@@ -65,7 +64,7 @@ public class Trapezoid implements Area {
     public void setArea(double area) {
         if (area <= 0) {
             throw new IllegalArgumentException("You can't set 'area' parameter lower or equal to 0");
-        } else
+        }
             this.area = area;
     }
 }
