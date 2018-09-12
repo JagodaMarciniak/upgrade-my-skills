@@ -4,12 +4,16 @@ public class Circle implements Figure {
     private double radius;
     final double pi = Math.PI;
 
-    public Circle(double radius) {
+    public Circle() {
+    }
+
+    public Circle(double radius)  {
         if (radius <= 0) {
             throw new IllegalArgumentException("The 'radius' parameter must be higher that 0");
         }
         this.radius = radius;
     }
+
 
     @Override
     public double calculateArea() {
