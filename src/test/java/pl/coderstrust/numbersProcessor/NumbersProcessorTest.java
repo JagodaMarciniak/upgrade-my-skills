@@ -1,41 +1,45 @@
 package pl.coderstrust.numbersProcessor;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
+import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static org.junit.Assert.assertEquals;
 
+@RunWith(JUnitParamsRunner.class)
 public class NumbersProcessorTest {
+    private NumbersProcessor processor;
 
-    @Test
-    public void testIntegersWithSpaces() {
-        //when
-        String line = "2 445 78 ";
-        String expected = "2+445+78=525";
-        //given
-        String actual = new NumbersProcessor().processLine(line);
-        //then
-        assertEquals(expected, actual);
+    @Before
+    public void setUp() {
+        processor = new NumbersProcessor();
+    }
+
+    public Object[] testConditions1() {
+        return new Object[]{
+                new Object[]{"2 445 78 ", "2+445+78=525"},
+                new Object[]{"3456  ", "3456=3456"},
+        };
     }
 
     @Test
-    public void testIntegersWithoutSpaces() {
-        //when
-        String line = "244578";
-        String expected = "244578=244578";
-        //given
-        String actual = new NumbersProcessor().processLine(line);
-        //then
-        assertEquals(expected, actual);
+    @Parameters(method = "testConditions1")
+    public void testForDifferentLinesWithSpacesAndIntegers(String actual, String expected) {
+        assertEquals(expected, processor.processLine(actual));
+    }
+
+    public Object[] testConditions2() {
+        return new Object[]{
+                new Object[]{"", ""},
+                new Object[]{null, ""}
+        };
     }
 
     @Test
-    public void test() {
-        //when
-        String line = "244578";
-        String expected = "244578=244578";
-        //given
-        String actual = new NumbersProcessor().processLine(line);
-        //then
-        assertEquals(expected, actual);
+    @Parameters(method = "testConditions2")
+    public void testForNullAndEmptyLine(String actual, String expected) {
+        assertEquals(expected, processor.processLine(actual));
     }
 }
