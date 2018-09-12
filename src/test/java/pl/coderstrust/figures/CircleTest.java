@@ -34,7 +34,7 @@ public class CircleTest {
         //given
         Circle circle = new Circle();
 
-       //when
+        //when
         thrown.expect(IllegalArgumentException.class);
         circle.setRadius(radius);
     }

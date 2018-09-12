@@ -7,7 +7,7 @@ public class Circle implements Figure {
     public Circle() {
     }
 
-    public Circle(double radius)  {
+    public Circle(double radius) {
         if (radius <= 0) {
             throw new IllegalArgumentException("The 'radius' parameter must be higher that 0");
         }
