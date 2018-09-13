@@ -9,8 +9,10 @@ import org.mockito.runners.MockitoJUnitRunner;
 import java.io.IOException;
 import java.util.Arrays;
 
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Matchers.anyList;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.*;
+
 
 @RunWith(MockitoJUnitRunner.class)
 public class ProcessorTest {
@@ -24,17 +26,20 @@ public class ProcessorTest {
     private Processor processor;
 
     @Test
-    public void shouldProcessProvidedInputFileAndSaveResultToProvidedOutputFile() throws IOException, RuntimeException {
+    public void shouldProcessProvidedInputFileAndSaveResultToProvidedOutputFile() throws IOException {
         // given
-        when(fileProcessor.readLinesFromFile("src/main/resources/1000")).thenReturn(Arrays.asList("1 2 3", "4 5 6"));
+        String inputFile = "src/main/resources/1000";
+        when(fileProcessor.readLinesFromFile(inputFile)).thenReturn(Arrays.asList("1 2 3", "4 5 6"));
         when(numbersProcessor.processLine("1 2 3")).thenReturn("1+2+3=6");
-//        doThrow(new Exception()).when(fileProcessor.writeLinesToFile(Arrays.asList("1+2+3=6", "4+5=9"), "1000out"));
+        when(numbersProcessor.processLine("4 5 6")).thenReturn("4+5+6=15");
+        doNothing().when(fileProcessor).writeLinesToFile(anyList(), anyString());
+
         // when
         processor.process("src/main/resources/1000", "src/main/resources/1000out");
 
         // then
-        verify(fileProcessor).readLinesFromFile("src/main/resources/1000");
+        verify(fileProcessor).readLinesFromFile(inputFile);
         verify(numbersProcessor).processLine("1 2 3");
-        verify(fileProcessor).writeLinesToFile(Arrays.asList("1+2+3=6", "4+5=9"), "1000out");
+        verify(fileProcessor).writeLinesToFile(Arrays.asList("1+2+3=6", "4+5+6=15"), "src/main/resources/1000out");
     }
 }

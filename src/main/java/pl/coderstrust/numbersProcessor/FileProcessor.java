@@ -17,7 +17,7 @@ public class FileProcessor {
         return lines;
     }
 
-    public static void writeLinesToFile(List<String> lines, String fileName) throws IOException {
+    public void writeLinesToFile(List<String> lines, String fileName) throws IOException {
         PrintWriter printWriter = new PrintWriter(new FileWriter(fileName));
         for (String line : lines) {
             printWriter.println(line);
