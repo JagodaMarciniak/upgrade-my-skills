@@ -4,6 +4,9 @@ public class Rectangle implements Figure {
 
     private double width, height, area;
 
+    public Rectangle() {
+    }
+
     public Rectangle(double width, double height) {
         if (height <= 0) {
             throw new IllegalArgumentException("The 'height' parameter must be higher that 0");
@@ -12,8 +15,8 @@ public class Rectangle implements Figure {
         }
         this.width = width;
         this.height = height;
-
     }
+
 
     public Rectangle(double width) {
         if (width <= 0) {
@@ -25,10 +28,6 @@ public class Rectangle implements Figure {
     @Override
     public double calculateArea() {
         return width * height;
-    }
-
-    public double getArea() {
-        return area;
     }
 
     public double getWidth() {
