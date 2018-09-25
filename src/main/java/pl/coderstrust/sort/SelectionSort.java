@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class SelectionSort implements SortingMethod {
 
+    @Override
     public int[] sort(int[] array) {
         int[] arrayToSort = Arrays.copyOf(array, array.length);
         for (int i = 0; i < arrayToSort.length - 1; i++) {

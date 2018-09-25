@@ -2,6 +2,7 @@ package pl.coderstrust.sort;
 
 public class InsertionSort implements SortingMethod {
 
+    @Override
     public int[] sort(int[] array) {
         int temp;
         for (int i = 1; i < array.length; i++) {

@@ -6,6 +6,7 @@ import java.util.List;
 
 public class CollectionsSort implements SortingMethod {
 
+    @Override
     public int[] sort(int array[]) {
         List<Integer> listOfInteger = convertArrayToList(array);
         Collections.sort(listOfInteger);
