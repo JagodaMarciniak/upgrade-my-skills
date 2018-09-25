@@ -9,14 +9,14 @@ public class CountingSort implements SortingMethod {
         int[] arrayToSort = Arrays.copyOf(array, array.length);
         int n = arrayToSort.length;
         int result[] = new int[n];
-        int count[] = new int[9];
-        for (int i = 0; i < 9; ++i) {
+        int count[] = new int[200];
+        for (int i = 0; i < 199; ++i) {
             count[i] = 0;
         }
         for (int i = 0; i < n; ++i) {
             ++count[arrayToSort[i]];
         }
-        for (int i = 1; i <= 8; ++i) {
+        for (int i = 1; i < 200; ++i) {
             count[i] += count[i - 1];
         }
         for (int i = 0; i < n; ++i) {
@@ -26,4 +26,3 @@ public class CountingSort implements SortingMethod {
         return result;
     }
 }
-
