@@ -2,7 +2,10 @@ package pl.coderstrust.sort;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
+import org.junit.AfterClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExternalResource;
 import org.junit.runner.RunWith;
 
 import java.util.Arrays;
@@ -17,7 +20,26 @@ public abstract class SortingTestBase {
 
     SortingMethod test = getSortingMethod();
 
-    public static Collection<Object[]> parameters() {
+    @AfterClass
+    public static void message() {
+        System.out.println("Sorting method tested");
+    }
+
+    @Rule
+    public ExternalResource externalResource = new ExternalResource() {
+        private long startTime;
+
+        protected void before() throws Throwable {
+            this.startTime = System.currentTimeMillis();
+        }
+
+        protected void after() {
+            long endTime = System.currentTimeMillis();
+            System.out.println("Time: " + (endTime - startTime));
+        }
+    };
+
+    public Collection<Object[]> parameters() {
         return Arrays.asList(new Object[][]{
                 {new int[]{1, 4, 1, 6, 3, 5}, new int[]{1, 1, 3, 4, 5, 6}},
                 {new int[]{}, new int[]{}},
@@ -29,13 +51,11 @@ public abstract class SortingTestBase {
         });
     }
 
-    @Test
     @Parameters(method = "parameters")
+    @Test
     public void testForDifferentArrays(int[] actual, int[] expected) {
-        long startTime = System.currentTimeMillis();
         int[] result = test.sort(actual);
-        long endTime = System.currentTimeMillis();
-        System.out.println("Time: " + (endTime - startTime));
         assertArrayEquals(expected, result);
+        System.out.println("next parameter");
     }
 }
