@@ -17,29 +17,22 @@ public class NumbersProcessorTest {
         processor = new NumbersProcessor();
     }
 
-    public Object[] testConditions1() {
+    public Object[] testConditions() {
         return new Object[]{
                 new Object[]{"2 445 78 ", "2+445+78=525"},
                 new Object[]{"3456  ", "3456=3456"},
-        };
-    }
-
-    @Test
-    @Parameters(method = "testConditions1")
-    public void testForDifferentLinesWithSpacesAndIntegers(String actual, String expected) {
-        assertEquals(expected, processor.processLine(actual));
-    }
-
-    public Object[] testConditions2() {
-        return new Object[]{
                 new Object[]{"", ""},
-                new Object[]{null, ""}
+                new Object[]{null, ""},
+                new Object[]{"A", ""},
+                new Object[]{"3+4", ""},
+                new Object[]{"     ", ""},
+
         };
     }
 
     @Test
-    @Parameters(method = "testConditions2")
-    public void testForNullAndEmptyLine(String actual, String expected) {
+    @Parameters(method = "testConditions")
+    public void testForDifferentLinesForNullAndEmptyLines(String actual, String expected) {
         assertEquals(expected, processor.processLine(actual));
     }
 }
