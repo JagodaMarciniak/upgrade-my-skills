@@ -1,4 +1,4 @@
-package pl.coderstrust.numbersProcessor;
+package pl.coderstrust.numbersprocessor;
 
 import java.util.Scanner;
 

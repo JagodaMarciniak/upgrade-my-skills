@@ -1,4 +1,4 @@
-package pl.coderstrust.numbersProcessor;
+package pl.coderstrust.numbersprocessor;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
@@ -17,22 +17,26 @@ public class NumbersProcessorTest {
         processor = new NumbersProcessor();
     }
 
-    public Object[] testConditions() {
+    public Object[] argumentsForCorrectBehaviour() {
         return new Object[]{
                 new Object[]{"2 445 78 ", "2+445+78=525"},
                 new Object[]{"3456  ", "3456=3456"},
+                new Object[]{"1 2 3 4", "1+2+3+4=10"},
+                new Object[]{" 1 2 3", "1+2+3=6"},
+                new Object[]{"1 g 5 sd 65fg", ""},
                 new Object[]{"", ""},
                 new Object[]{null, ""},
                 new Object[]{"A", ""},
+                new Object[]{"1 # $ 4 2 ! n", ""},
                 new Object[]{"3+4", ""},
                 new Object[]{"     ", ""},
-
         };
     }
 
     @Test
-    @Parameters(method = "testConditions")
-    public void testForDifferentLinesForNullAndEmptyLines(String actual, String expected) {
-        assertEquals(expected, processor.processLine(actual));
+    @Parameters(method = "argumentsForCorrectBehaviour")
+    public void testForCorrectBehaviour(String actual, String expected) {
+        String given = processor.processLine(actual);
+        assertEquals(expected, given);
     }
 }

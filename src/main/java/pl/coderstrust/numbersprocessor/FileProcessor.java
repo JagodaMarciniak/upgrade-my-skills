@@ -1,4 +1,4 @@
-package pl.coderstrust.numbersProcessor;
+package pl.coderstrust.numbersprocessor;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -8,6 +8,9 @@ import java.util.Scanner;
 public class FileProcessor {
 
     public List<String> readLinesFromFile(String filepath) throws FileNotFoundException {
+        if (filepath == null) {
+            throw new IllegalArgumentException("Filepath cannot be null.");
+        }
         List<String> lines = new ArrayList<>();
         Scanner scanner = new Scanner(new File(filepath));
         while (scanner.hasNextLine()) {
@@ -17,8 +20,11 @@ public class FileProcessor {
         return lines;
     }
 
-    public void writeLinesToFile(List<String> lines, String fileName) throws IOException {
-        PrintWriter printWriter = new PrintWriter(new FileWriter(fileName));
+    public void writeLinesToFile(List<String> lines, String filepath) throws IOException {
+        if (filepath == null || lines == null) {
+            throw new IllegalArgumentException("Cannot be null.");
+        }
+        PrintWriter printWriter = new PrintWriter(new FileWriter(filepath));
         for (String line : lines) {
             printWriter.println(line);
         }
