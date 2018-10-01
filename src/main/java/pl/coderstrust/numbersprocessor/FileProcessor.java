@@ -21,8 +21,11 @@ public class FileProcessor {
     }
 
     public void writeLinesToFile(List<String> lines, String filepath) throws IOException {
-        if (filepath == null || lines == null) {
-            throw new IllegalArgumentException("Cannot be null.");
+        if (filepath == null) {
+            throw new IllegalArgumentException("Filepath cannot be null.");
+        }
+        if (lines == null) {
+            throw new IllegalArgumentException("Lines cannot be null.");
         }
         PrintWriter printWriter = new PrintWriter(new FileWriter(filepath));
         for (String line : lines) {

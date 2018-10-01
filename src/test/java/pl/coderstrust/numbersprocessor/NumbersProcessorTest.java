@@ -36,7 +36,7 @@ public class NumbersProcessorTest {
     @Test
     @Parameters(method = "argumentsForCorrectBehaviour")
     public void testForCorrectBehaviour(String actual, String expected) {
-        String given = processor.processLine(actual);
-        assertEquals(expected, given);
+        String result = processor.processLine(actual);
+        assertEquals(expected, result);
     }
 }

@@ -13,7 +13,6 @@ import static org.mockito.Matchers.anyList;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.*;
 
-
 @RunWith(MockitoJUnitRunner.class)
 public class ProcessorTest {
 
@@ -37,7 +36,7 @@ public class ProcessorTest {
         doNothing().when(fileProcessor).writeLinesToFile(anyList(), anyString());
 
         // when
-        processor.process("src/main/resources/1000", "src/main/resources/1000out");
+        processor.process(inputFile, outputFile);
 
         // then
         verify(fileProcessor).readLinesFromFile(inputFile);
