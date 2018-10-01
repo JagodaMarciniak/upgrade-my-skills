@@ -2,7 +2,6 @@ package pl.coderstrust.sort;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExternalResource;
@@ -20,10 +19,6 @@ public abstract class SortingTestBase {
 
     SortingMethod test = getSortingMethod();
 
-    @BeforeClass
-    public static void message() {
-        System.out.println("Sorting method tested");
-    }
 
     @Rule
     public ExternalResource externalResource = new ExternalResource() {
@@ -56,6 +51,5 @@ public abstract class SortingTestBase {
     public void testForDifferentArrays(int[] actual, int[] expected) {
         int[] result = test.sort(actual);
         assertArrayEquals(expected, result);
-        System.out.println("next parameter");
     }
 }
