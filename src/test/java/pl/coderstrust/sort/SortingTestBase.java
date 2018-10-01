@@ -34,7 +34,7 @@ public abstract class SortingTestBase {
         }
     };
 
-    public Collection<Object[]> parameters() {
+    public Collection<Object[]> testData() {
         return Arrays.asList(new Object[][]{
                 {new int[]{1, 4, 1, 6, 3, 5}, new int[]{1, 1, 3, 4, 5, 6}},
                 {new int[]{}, new int[]{}},
@@ -46,10 +46,10 @@ public abstract class SortingTestBase {
         });
     }
 
-    @Parameters(method = "parameters")
+    @Parameters(method = "testData")
     @Test
-    public void testForDifferentArrays(int[] actual, int[] expected) {
-        int[] result = test.sort(actual);
+    public void testSortArray(int[] inputArray, int[] expected) {
+        int[] result = test.sort(inputArray);
         assertArrayEquals(expected, result);
     }
 }

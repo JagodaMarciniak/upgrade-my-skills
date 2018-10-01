@@ -6,7 +6,7 @@ public class CountingSortTest extends SortingTestBase {
 
     @BeforeClass
     public static void before() {
-        System.out.println(BubbleSortTest.class.getSimpleName() + " tested");
+        System.out.println(CountingSortTest.class.getSimpleName() + " running..");
     }
 
     @Override
