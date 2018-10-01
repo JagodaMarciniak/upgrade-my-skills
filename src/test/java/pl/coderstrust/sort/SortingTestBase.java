@@ -2,7 +2,7 @@ package pl.coderstrust.sort;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
-import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExternalResource;
@@ -20,7 +20,7 @@ public abstract class SortingTestBase {
 
     SortingMethod test = getSortingMethod();
 
-    @AfterClass
+    @BeforeClass
     public static void message() {
         System.out.println("Sorting method tested");
     }
@@ -29,7 +29,7 @@ public abstract class SortingTestBase {
     public ExternalResource externalResource = new ExternalResource() {
         private long startTime;
 
-        protected void before() throws Throwable {
+        protected void before() {
             this.startTime = System.currentTimeMillis();
         }
 
