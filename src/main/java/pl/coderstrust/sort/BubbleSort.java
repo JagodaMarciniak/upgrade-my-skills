@@ -2,16 +2,10 @@ package pl.coderstrust.sort;
 
 import java.util.Arrays;
 
-public class BubbleSort {
-    public static void main(String[] args) {
-        int[] array = {3, 4, 2, 1, 10, 55, 0};
-        System.out.println("Unsorted array:");
-        System.out.println(Arrays.toString(array));
-        System.out.println("Sorted array:");
-        System.out.println(Arrays.toString(bubbleSort(array)));
-    }
+public class BubbleSort implements SortingMethod {
 
-    public static int[] bubbleSort(int[] array) {
+    @Override
+    public int[] sort(int[] array) {
         int[] arrayToSort = Arrays.copyOf(array, array.length);
         for (boolean sorted = false; !sorted; ) {
             sorted = true;
