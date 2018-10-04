@@ -1,28 +1,27 @@
 package pl.coderstrust.figures;
 
 public class Square implements Figure {
-    private double a;
+    private double side;
 
-    public Square(double a) {
-        if (a <= 0) {
-            throw new IllegalArgumentException("The 'a' parameter must be higher that 0");
+    public Square() {
+    }
+
+    public Square(double side) {
+        if (side <= 0) {
+            throw new IllegalArgumentException("The 'side' parameter must be higher that 0");
         }
-        this.a = a;
+        this.side = side;
     }
 
     @Override
     public double calculateArea() {
-        return a * a;
+        return side * side;
     }
 
-    public double getA() {
-        return a;
-    }
-
-    public void setA(double a) {
-        if (a <= 0) {
-            throw new IllegalArgumentException("You can't set 'a' parameter lower then 0 or equal to 0");
+    public void setSide(double side) {
+        if (side <= 0) {
+            throw new IllegalArgumentException("You can't set 'side' parameter lower then 0 or equal to 0");
         }
-        this.a = a;
+        this.side = side;
     }
 }

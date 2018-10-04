@@ -2,27 +2,32 @@ package pl.coderstrust.figures;
 
 public class Triangle implements Figure {
     private double height;
-    private double a;
+    private double base;
     private double area;
 
-    public Triangle(double height, double a) {
+    public Triangle() {
+    }
+
+    public Triangle(double height) {
         if (height <= 0) {
-            throw new IllegalArgumentException("The 'height' parameter must be higher that 0");
-        } else if (a <= 0) {
-            throw new IllegalArgumentException("The 'a' parameter must be higher that 0");
+            throw new IllegalArgumentException("The 'height' parameter must be higher than 0");
         }
         this.height = height;
-        this.a = a;
+    }
 
+    public Triangle(double height, double base) {
+        if (height <= 0) {
+            throw new IllegalArgumentException("The 'height' parameter must be higher that 0");
+        } else if (base <= 0) {
+            throw new IllegalArgumentException("The 'base' parameter must be higher that 0");
+        }
+        this.height = height;
+        this.base = base;
     }
 
     @Override
     public double calculateArea() {
-        return a * height / 2;
-    }
-
-    public double getHeight() {
-        return height;
+        return base * height / 2;
     }
 
     public void setHeight(double height) {
@@ -30,30 +35,19 @@ public class Triangle implements Figure {
             throw new IllegalArgumentException("You can't set 'height' parameter lower than 0 or equal to 0");
         }
         this.height = height;
-
     }
 
-    public double getA() {
-        return a;
-    }
-
-    public void setA(double a) {
-        if (a <= 0) {
-            throw new IllegalArgumentException("You can't set 'a' parameter lower than 0 or equal to 0");
+    public void setBase(double base) {
+        if (base <= 0) {
+            throw new IllegalArgumentException("You can't set 'base' parameter lower than 0 or equal to 0");
         }
-        this.a = a;
-
-    }
-
-    public double getArea() {
-        return area;
+        this.base = base;
     }
 
     public void setArea(double area) {
-        if (a <= 0) {
+        if (base <= 0) {
             throw new IllegalArgumentException("You can't set 'area' parameter lower than 0 or equal to 0");
         }
         this.area = area;
-
     }
 }
