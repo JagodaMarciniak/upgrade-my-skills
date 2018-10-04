@@ -12,41 +12,41 @@ import java.util.Objects;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(JUnitParamsRunner.class)
-public class CircleTest {
-
+public class SquareTest {
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
     @Test
     public void testForCalculateArea() {
         //when
-        Circle circle = new Circle(10);
+        Square square = new Square(10.2);
 
         //given
-        double expected = Math.PI * 100;
-        double actual = circle.calculateArea();
+        double expected = 10.2 * 10.2;
+        double actual = square.calculateArea();
 
         //then
         assertTrue(Objects.equals(expected, actual));
     }
 
     @Test
-    @Parameters({"-1",
-            "0", "-5"})
-    public void testForConstructorWithInvalidValue(double radius) {
+    @Parameters({"-1.0",
+            "0.0", "-5.2"})
+    public void testForConstructorWithInvalidValue(double side) {
         thrown.expect(IllegalArgumentException.class);
-        new Circle(radius);
+        new Square(side);
     }
 
     @Test
-    @Parameters({"-1",
-            "0", "-5"})
-    public void testForSetInvalidArguments(double radius) {
+    @Parameters({"-1.3",
+            "0.0", "-5.9"})
+    public void testForSetSide(double side) {
         //given
-        Circle circle = new Circle();
+        Square square = new Square();
 
         //when
         thrown.expect(IllegalArgumentException.class);
-        circle.setRadius(radius);
+        square.setSide(side);
     }
+
 }

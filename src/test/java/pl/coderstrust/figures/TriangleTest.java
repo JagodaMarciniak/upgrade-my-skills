@@ -12,7 +12,7 @@ import java.util.Objects;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(JUnitParamsRunner.class)
-public class RectangleTest {
+public class TriangleTest {
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
@@ -20,11 +20,11 @@ public class RectangleTest {
     @Test
     public void calculateArea() {
         //when
-        Rectangle rectangle = new Rectangle(2, 3);
+        Triangle triangle = new Triangle(2.0, 3.4);
 
         //given
-        double expected = 6;
-        double actual = rectangle.calculateArea();
+        double expected = 3.4 * 2.0 / 2;
+        double actual = triangle.calculateArea();
 
         //then
         assertTrue(Objects.equals(expected, actual));
@@ -33,13 +33,34 @@ public class RectangleTest {
     @Test
     @Parameters({"-1",
             "0", "-5"})
-    public void testForSetAreaWithInvalidArgument(double area) {
-        //given
-        Rectangle rectangle = new Rectangle();
+    public void testForSetInvalidArgumentsHeight(double height) {
+        Triangle triangle = new Triangle();
 
         //when
         thrown.expect(IllegalArgumentException.class);
-        rectangle.setArea(area);
+        triangle.setHeight(height);
+    }
+
+    @Test
+    @Parameters({"-1",
+            "0", "-5"})
+    public void testForSetInvalidArgumentsBase(double base) {
+        Triangle triangle = new Triangle();
+
+        //when
+        thrown.expect(IllegalArgumentException.class);
+        triangle.setHeight(base);
+    }
+
+    @Test
+    @Parameters({"-1",
+            "0", "-5"})
+    public void testForSetInvalidArgumentsArea(double area) {
+        Triangle triangle = new Triangle();
+
+        //when
+        thrown.expect(IllegalArgumentException.class);
+        triangle.setHeight(area);
     }
 
     @Test
@@ -47,38 +68,14 @@ public class RectangleTest {
             "0", "-5"})
     public void testForConstructorWithInvalidValueHeight(double height) {
         thrown.expect(IllegalArgumentException.class);
-        new Rectangle(height);
+        new Triangle(height);
     }
 
     @Test
     @Parameters({"-1",
             "0", "-5"})
-    public void testForConstructorWithInvalidValueWidth(double width) {
+    public void testForConstructorWithInvalidValueBase(double base) {
         thrown.expect(IllegalArgumentException.class);
-        new Rectangle(width);
-    }
-
-    @Test
-    @Parameters({"-1",
-            "0", "-5"})
-    public void testForSetWidthWithInvalidArgument(double width) {
-        //given
-        Rectangle rectangle = new Rectangle();
-
-        //when
-        thrown.expect(IllegalArgumentException.class);
-        rectangle.setWidth(width);
-    }
-
-    @Test
-    @Parameters({"-1",
-            "0", "-5"})
-    public void testForSetHeightWithInvalidArgument(double height) {
-        //given
-        Rectangle rectangle = new Rectangle();
-
-        //when
-        thrown.expect(IllegalArgumentException.class);
-        rectangle.setHeight(height);
+        new Triangle(base);
     }
 }
