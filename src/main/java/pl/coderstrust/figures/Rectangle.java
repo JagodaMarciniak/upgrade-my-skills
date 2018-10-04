@@ -1,7 +1,6 @@
 package pl.coderstrust.figures;
 
 public class Rectangle implements Figure {
-
     private double width, height, area;
 
     public Rectangle() {

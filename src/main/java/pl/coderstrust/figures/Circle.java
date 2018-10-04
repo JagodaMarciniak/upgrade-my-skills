@@ -9,7 +9,7 @@ public class Circle implements Figure {
 
     public Circle(double radius) {
         if (radius <= 0) {
-            throw new IllegalArgumentException("The 'radius' parameter must be higher that 0");
+            throw new IllegalArgumentException("The 'radius' parameter must be higher than 0");
         }
         this.radius = radius;
     }
@@ -21,7 +21,7 @@ public class Circle implements Figure {
 
     public void setRadius(double radius) {
         if (radius <= 0) {
-            throw new IllegalArgumentException("You can't set 'radius' parameter lower or equal that 0");
+            throw new IllegalArgumentException("You can't set 'radius' parameter lower or equal than 0");
         }
         this.radius = radius;
     }

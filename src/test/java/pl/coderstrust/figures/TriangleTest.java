@@ -45,6 +45,7 @@ public class TriangleTest {
     @Parameters({"-1",
             "0", "-5"})
     public void testForSetInvalidArgumentsBase(double base) {
+        //given
         Triangle triangle = new Triangle();
 
         //when
@@ -56,6 +57,7 @@ public class TriangleTest {
     @Parameters({"-1",
             "0", "-5"})
     public void testForSetInvalidArgumentsArea(double area) {
+        //given
         Triangle triangle = new Triangle();
 
         //when
