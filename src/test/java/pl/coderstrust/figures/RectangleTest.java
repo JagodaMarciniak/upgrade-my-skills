@@ -31,8 +31,7 @@ public class RectangleTest {
     }
 
     @Test
-    @Parameters({"-1",
-            "0", "-5"})
+    @Parameters({"-1", "0", "-5"})
     public void testForSetAreaWithInvalidArgument(double area) {
         //given
         Rectangle rectangle = new Rectangle();
@@ -43,24 +42,21 @@ public class RectangleTest {
     }
 
     @Test
-    @Parameters({"-1",
-            "0", "-5"})
+    @Parameters({"-1", "0", "-5"})
     public void testForConstructorWithInvalidValueHeight(double height) {
         thrown.expect(IllegalArgumentException.class);
         new Rectangle(height);
     }
 
     @Test
-    @Parameters({"-1",
-            "0", "-5"})
+    @Parameters({"-1", "0", "-5"})
     public void testForConstructorWithInvalidValueWidth(double width) {
         thrown.expect(IllegalArgumentException.class);
         new Rectangle(width);
     }
 
     @Test
-    @Parameters({"-1",
-            "0", "-5"})
+    @Parameters({"-1", "0", "-5"})
     public void testForSetWidthWithInvalidArgument(double width) {
         //given
         Rectangle rectangle = new Rectangle();
@@ -71,8 +67,7 @@ public class RectangleTest {
     }
 
     @Test
-    @Parameters({"-1",
-            "0", "-5"})
+    @Parameters({"-1", "0", "-5"})
     public void testForSetHeightWithInvalidArgument(double height) {
         //given
         Rectangle rectangle = new Rectangle();

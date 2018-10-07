@@ -30,16 +30,14 @@ public class SquareTest {
     }
 
     @Test
-    @Parameters({"-1.0",
-            "0.0", "-5.2"})
+    @Parameters({"-1.3", "0.0", "-5.9"})
     public void testForConstructorWithInvalidValue(double side) {
         thrown.expect(IllegalArgumentException.class);
         new Square(side);
     }
 
     @Test
-    @Parameters({"-1.3",
-            "0.0", "-5.9"})
+    @Parameters({"-1.3", "0.0", "-5.9"})
     public void testForSetSide(double side) {
         //given
         Square square = new Square();

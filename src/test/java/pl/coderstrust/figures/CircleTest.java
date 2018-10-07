@@ -31,16 +31,14 @@ public class CircleTest {
     }
 
     @Test
-    @Parameters({"-1",
-            "0", "-5"})
+    @Parameters({"-1", "0", "-5"})
     public void testForConstructorWithInvalidValue(double radius) {
         thrown.expect(IllegalArgumentException.class);
         new Circle(radius);
     }
 
     @Test
-    @Parameters({"-1",
-            "0", "-5"})
+    @Parameters({"-1", "0", "-5"})
     public void testForSetInvalidArguments(double radius) {
         //given
         Circle circle = new Circle();

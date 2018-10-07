@@ -31,32 +31,28 @@ public class TrapezoidTest {
     }
 
     @Test
-    @Parameters({"-1",
-            "0", "-5"})
+    @Parameters({"-1", "0", "-5"})
     public void testForConstructorWithInvalidValueHeight(double height) {
         thrown.expect(IllegalArgumentException.class);
         new Trapezoid(height);
     }
 
     @Test
-    @Parameters({"-1",
-            "0", "-5"})
+    @Parameters({"-1", "0", "-5"})
     public void testForConstructorWithInvalidValueSideA(double sideA) {
         thrown.expect(IllegalArgumentException.class);
         new Trapezoid(sideA);
     }
 
     @Test
-    @Parameters({"-1",
-            "0", "-5"})
+    @Parameters({"-1", "0", "-5"})
     public void testForConstructorWithInvalidValueSideB(double sideB) {
         thrown.expect(IllegalArgumentException.class);
         new Trapezoid(sideB);
     }
 
     @Test
-    @Parameters({"-1.3",
-            "0.0", "-5.2"})
+    @Parameters({"-1.3", "0.0", "-5.2"})
     public void testForSetHeightWithInvalidArguments(double height) {
         //given
         Trapezoid trapezoid = new Trapezoid();
@@ -67,8 +63,7 @@ public class TrapezoidTest {
     }
 
     @Test
-    @Parameters({"-1.3",
-            "0.0", "-5.2"})
+    @Parameters({"-1.3", "0.0", "-5.2"})
     public void testForSetSideAWithInvalidArguments(double sideA) {
         //given
         Trapezoid trapezoid = new Trapezoid();
@@ -79,8 +74,7 @@ public class TrapezoidTest {
     }
 
     @Test
-    @Parameters({"-1.3",
-            "0.0", "-5.2"})
+    @Parameters({"-1.3", "0.0", "-5.2"})
     public void testForSetSideBWithInvalidArguments(double sideB) {
         //given
         Trapezoid trapezoid = new Trapezoid();
@@ -91,8 +85,7 @@ public class TrapezoidTest {
     }
 
     @Test
-    @Parameters({"-1.3",
-            "0.0", "-5.2"})
+    @Parameters({"-1.3", "0.0", "-5.2"})
     public void testForSetAreaWithInvalidArguments(double area) {
         //given
         Trapezoid trapezoid = new Trapezoid();

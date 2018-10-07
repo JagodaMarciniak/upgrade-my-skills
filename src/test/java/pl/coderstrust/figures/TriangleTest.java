@@ -31,8 +31,7 @@ public class TriangleTest {
     }
 
     @Test
-    @Parameters({"-1",
-            "0", "-5"})
+    @Parameters({"-1", "0", "-5"})
     public void testForSetInvalidArgumentsHeight(double height) {
         Triangle triangle = new Triangle();
 
@@ -42,8 +41,7 @@ public class TriangleTest {
     }
 
     @Test
-    @Parameters({"-1",
-            "0", "-5"})
+    @Parameters({"-1", "0", "-5"})
     public void testForSetInvalidArgumentsBase(double base) {
         //given
         Triangle triangle = new Triangle();
@@ -54,8 +52,7 @@ public class TriangleTest {
     }
 
     @Test
-    @Parameters({"-1",
-            "0", "-5"})
+    @Parameters({"-1", "0", "-5"})
     public void testForSetInvalidArgumentsArea(double area) {
         //given
         Triangle triangle = new Triangle();
@@ -66,16 +63,14 @@ public class TriangleTest {
     }
 
     @Test
-    @Parameters({"-1",
-            "0", "-5"})
+    @Parameters({"-1", "0", "-5"})
     public void testForConstructorWithInvalidValueHeight(double height) {
         thrown.expect(IllegalArgumentException.class);
         new Triangle(height);
     }
 
     @Test
-    @Parameters({"-1",
-            "0", "-5"})
+    @Parameters({"-1", "0", "-5"})
     public void testForConstructorWithInvalidValueBase(double base) {
         thrown.expect(IllegalArgumentException.class);
         new Triangle(base);
