@@ -2,16 +2,10 @@ package pl.coderstrust.sort;
 
 import java.util.Arrays;
 
-public class SelectionSort {
-    public static void main(String[] args) {
-        int[] array = {3, 20, 7, 40, 15, 27, 0};
-        System.out.println("Unsorted array : ");
-        System.out.println(Arrays.toString(array));
-        System.out.println("Sorted array :");
-        System.out.println(Arrays.toString(selectionSort(array)));
-    }
+public class SelectionSort implements SortingMethod {
 
-    public static int[] selectionSort(int[] array) {
+    @Override
+    public int[] sort(int[] array) {
         int[] arrayToSort = Arrays.copyOf(array, array.length);
         for (int i = 0; i < arrayToSort.length - 1; i++) {
             int indexOfMinNumber = i;
