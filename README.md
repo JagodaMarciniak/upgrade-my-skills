@@ -1,2 +1,3 @@
-# solutions-7-jagoda
+# upgrade-my-skills-
+Challenges from Java bootcamp.
 JagodaMarciniak
